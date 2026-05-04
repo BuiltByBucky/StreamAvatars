@@ -33,9 +33,13 @@ return [
             'port' => env('REVERB_SERVER_PORT', 8080),
             'path' => env('REVERB_SERVER_PATH', ''),
             'hostname' => env('REVERB_HOST'),
-            'options' => [
-                'tls' => [],
-            ],
+            'options' => array_filter([
+                'tls' => env('REVERB_CERT') ? [
+                    'local_cert'  => env('REVERB_CERT'),
+                    'local_pk'    => env('REVERB_CERT_KEY'),
+                    'verify_peer' => false,
+                ] : null,
+            ]),
             'max_request_size' => env('REVERB_MAX_REQUEST_SIZE', 10_000),
             'scaling' => [
                 'enabled' => env('REVERB_SCALING_ENABLED', false),

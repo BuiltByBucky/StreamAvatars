@@ -3,7 +3,12 @@
     "allow": [
       "Bash(dir *)",
       "PowerShell(composer *)",
-      "PowerShell(laravel *)"
+      "PowerShell(laravel *)",
+      "PowerShell(netstat *)",
+      "PowerShell(Get-Process *)",
+      "PowerShell(Invoke-WebRequest -Uri \"http://127.0.0.1:8080/app/wyug6id9gpw1tqpmfdbc\" -Method GET -ErrorAction SilentlyContinue | Select-Object StatusCode, StatusDescription, Content)",
+      "PowerShell(Get-ChildItem *)",
+      "PowerShell(Test-Path *)"
     ]
   }
 }

@@ -11,7 +11,7 @@ class OverlayController extends Controller
     public function state(string $channel, string $token): JsonResponse
     {
         $settings = OverlaySetting::where('overlay_token', $token)
-            ->whereHas('channel', fn ($q) => $q->where('twitch_username', $channel))
+            ->whereHas('channel', fn ($q) => $q->whereRaw('LOWER(twitch_username) = ?', [strtolower($channel)]))
             ->firstOrFail();
 
         $avatars = Avatar::where('is_visible', true)

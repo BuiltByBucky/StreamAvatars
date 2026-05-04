@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 240" width="120" height="240">
+  <rect x="22" y="228" width="34" height="10" rx="4" fill="#e8e8e8"/>
+  <rect x="24" y="222" width="30" height="10" rx="3" fill="#f0f0f0"/>
+  <rect x="64" y="228" width="34" height="10" rx="4" fill="#e8e8e8"/>
+  <rect x="66" y="222" width="30" height="10" rx="3" fill="#f0f0f0"/>
+  <!-- Stripe -->
+  <rect x="28" y="224" width="20" height="3" rx="1" fill="#3b82f6"/>
+  <rect x="70" y="224" width="20" height="3" rx="1" fill="#3b82f6"/>
+</svg>

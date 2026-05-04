@@ -6,15 +6,14 @@
         </div>
 
         <div class="flex gap-6">
-            <!-- Avatar preview -->
-            <div class="glass rounded-2xl p-6 flex flex-col items-center gap-5 w-60 shrink-0">
-                <div class="w-44 h-44 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                    <span class="text-gray-600 text-sm">Avatar preview</span>
+            <!-- Avatar card -->
+            <div class="glass rounded-2xl p-6 flex flex-col items-center gap-5 w-52 shrink-0">
+                <AvatarRenderer :avatar="store.avatar" :size="100" />
+                <div class="text-center">
+                    <p class="font-semibold text-sm">{{ auth.user?.twitch_display_name }}</p>
+                    <p class="text-xs text-gray-500 mt-0.5">Level {{ store.progress?.level ?? 1 }}</p>
                 </div>
-                <RouterLink
-                    to="/avatar/editor"
-                    class="btn-primary w-full text-center py-2.5 rounded-xl text-sm font-semibold text-white"
-                >
+                <RouterLink to="/avatar/editor" class="btn-primary w-full text-center py-2.5 rounded-xl text-sm font-semibold text-white">
                     Edit Avatar
                 </RouterLink>
             </div>
@@ -37,10 +36,22 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
+import { useAvatarStore } from '../../stores/avatar';
+import { useAuthStore } from '../../stores/auth';
+import AvatarRenderer from '../../components/AvatarRenderer.vue';
+
+const store = useAvatarStore();
+const auth = useAuthStore();
+
 const cards = [
-    { to: '/avatar/shop',      icon: '🛒', label: 'Shop',      desc: 'Buy new items with coins' },
+    { to: '/avatar/shop',      icon: '🛒', label: 'Shop',      desc: 'Buy items with coins' },
     { to: '/avatar/inventory', icon: '🎒', label: 'Inventory',  desc: 'Your unlocked items' },
     { to: '/avatar/progress',  icon: '📈', label: 'Progress',   desc: 'XP, level & watchtime' },
     { to: '/avatar/settings',  icon: '⚙️', label: 'Settings',   desc: 'Visibility & preferences' },
 ];
+
+onMounted(async () => {
+    await Promise.all([store.fetchAvatar(), store.fetchProgress()]);
+});
 </script>

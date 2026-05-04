@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 240" width="120" height="240">
+  <!-- Head -->
+  <circle cx="60" cy="42" r="28" fill="#f5c5a3"/>
+  <!-- Neck -->
+  <rect x="53" y="68" width="14" height="14" fill="#f5c5a3"/>
+  <!-- Torso (neutral, will be covered by shirt) -->
+  <rect x="26" y="80" width="68" height="82" rx="6" fill="#d4c4b0"/>
+  <!-- Left arm -->
+  <rect x="6"  y="80" width="22" height="72" rx="8" fill="#d4c4b0"/>
+  <!-- Right arm -->
+  <rect x="92" y="80" width="22" height="72" rx="8" fill="#d4c4b0"/>
+  <!-- Left leg (will be covered by pants) -->
+  <rect x="28" y="160" width="27" height="72" rx="6" fill="#c0b0a0"/>
+  <!-- Right leg -->
+  <rect x="65" y="160" width="27" height="72" rx="6" fill="#c0b0a0"/>
+</svg>

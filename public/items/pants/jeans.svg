@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 240" width="120" height="240">
+  <rect x="26" y="158" width="68" height="12" rx="2" fill="#1e3a5f"/>
+  <rect x="28" y="168" width="27" height="66" rx="6" fill="#1e40af"/>
+  <rect x="65" y="168" width="27" height="66" rx="6" fill="#1e40af"/>
+  <!-- Seam -->
+  <line x1="59" y1="168" x2="59" y2="234" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="67" y1="168" x2="67" y2="234" stroke="#1e3a5f" stroke-width="1.5"/>
+</svg>
